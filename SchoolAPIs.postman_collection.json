@@ -1,0 +1,40 @@
+{
+  "info": {
+    "name": "School Management APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "item": [
+    {
+      "name": "Add School",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Springfield High\",\n  \"address\": \"742 Evergreen Terrace, Springfield\",\n  \"latitude\": 37.7749,\n  \"longitude\": -122.4194\n}"
+        },
+        "url": { "raw": "http://localhost:3000/addSchool", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["addSchool"] }
+      },
+      "response": []
+    },
+    {
+      "name": "List Schools",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/listSchools?lat=37.7749&lng=-122.4194",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["listSchools"],
+          "query": [
+            { "key": "lat", "value": "37.7749" },
+            { "key": "lng", "value": "-122.4194" }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
