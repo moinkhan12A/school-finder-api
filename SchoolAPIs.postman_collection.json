@@ -1,6 +1,6 @@
 {
   "info": {
-    "name": "School Management APIs",
+    "name": "School Finder API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "version": "1.0.0"
   },
@@ -12,9 +12,14 @@
         "header": [{ "key": "Content-Type", "value": "application/json" }],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"name\": \"Springfield High\",\n  \"address\": \"742 Evergreen Terrace, Springfield\",\n  \"latitude\": 37.7749,\n  \"longitude\": -122.4194\n}"
+          "raw": "{\n  \"name\": \"Example School\",\n  \"address\": \"123 Test St, Test City\",\n  \"latitude\": 22.7196,\n  \"longitude\": 75.8577\n}"
         },
-        "url": { "raw": "http://localhost:3000/addSchool", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["addSchool"] }
+        "url": {
+          "raw": "https://school-finder-api-nf8s.onrender.com/addSchool",
+          "protocol": "https",
+          "host": ["school-finder-api-nf8s", "onrender", "com"],
+          "path": ["addSchool"]
+        }
       },
       "response": []
     },
@@ -22,15 +27,15 @@
       "name": "List Schools",
       "request": {
         "method": "GET",
+        "header": [],
         "url": {
-          "raw": "http://localhost:3000/listSchools?lat=37.7749&lng=-122.4194",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "3000",
+          "raw": "https://school-finder-api-nf8s.onrender.com/listSchools?lat=22.7196&lng=75.8577",
+          "protocol": "https",
+          "host": ["school-finder-api-nf8s", "onrender", "com"],
           "path": ["listSchools"],
           "query": [
-            { "key": "lat", "value": "37.7749" },
-            { "key": "lng", "value": "-122.4194" }
+            { "key": "lat", "value": "22.7196" },
+            { "key": "lng", "value": "75.8577" }
           ]
         }
       },
@@ -38,3 +43,50 @@
     }
   ]
 }
+
+// Example of API Testing
+// POST 
+"https://school-finder-api-nf8s.onrender.com/addSchool"
+  {
+    "name": "St. Xavier's High School",
+    "address": "Fort, Mumbai, Maharashtra 400001",
+    "latitude": 18.9322,
+    "longitude": 72.8336,
+    "distanceInKm": 14.23
+  }
+// RESPONSE
+{
+  "success": true,
+  "data": 
+    {
+      "id": 1,
+      "name": "St. Xavier's High School",
+      "address": "Fort, Mumbai, Maharashtra 400001",
+      "latitude": 18.9322,
+      "longitude": 72.8336,
+      "created_at": "2025-08-09T06:10:09.000Z",
+      "distance_km": 14.173
+    }
+}
+// GET
+https://school-finder-api-nf8s.onrender.com/listSchools?lat=22.7196&lng=75.8577
+// RESPONSE
+{
+  "success": true,
+  "count": 1,
+  "data": 
+    {
+      "id": 2,
+      "name": "St. Xavier's High School",
+      "address": "Fort, Mumbai, Maharashtra 400001",
+      "latitude": 18.9322,
+      "longitude": 72.8336,
+      "created_at": "2025-08-09T06:10:09.000Z",
+      "distance_km": 14.173
+    }
+}
+
+
+
+
+
