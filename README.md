@@ -19,13 +19,13 @@ Copy -> .env
 
 Fill in your MySQL credentials:
 
-env
-PORT=3000
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_NAME=school_db
-DB_PORT=3306
+ env
+ PORT=3000
+ DB_HOST=localhost
+ DB_USER=root
+ DB_PASSWORD=yourpassword
+ DB_NAME=school_db
+ DB_PORT=3306
 
 
 Install dependencies
