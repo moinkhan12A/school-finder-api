@@ -3,7 +3,7 @@
 A Node.js + Express.js + MySQL API for managing schools, including adding new schools and retrieving a list sorted by proximity to a given location.
 
 
-🚀 Setup (Local Development)
+ Setup (Local Development)
 
 Clone repository
 
@@ -19,7 +19,7 @@ Copy -> .env
 
 Fill in your MySQL credentials:
 
- env
+ env -> 
  PORT=3000
  DB_HOST=localhost
  DB_USER=root
